@@ -1,0 +1,16 @@
+version: '3.7'
+
+
+services:
+    duckling:
+        image: docker.artifact.xtraman.org/rasa/duckling
+        ports:
+            - 8000:8000
+
+    entity-pipeline:
+        build:
+            context: ./
+            dockerfile: ./compose/backend/Dockerfile
+        ports:
+            - 8889:80
+
